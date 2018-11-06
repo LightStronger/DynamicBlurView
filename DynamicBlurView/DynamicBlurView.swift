@@ -142,9 +142,6 @@ open class DynamicBlurView: UIView {
         
         view.drawHierarchy(in: rect, afterScreenUpdates: true)
         
-        let overlappingSublayers = (view.layer as? BlurLayer)?.overlappingLayers(in: view.layer.sublayers)
-        overlappingSublayers?.forEach { $0.isHidden = false }
-        
         defer {
             UIGraphicsEndImageContext()
         }
